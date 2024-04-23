@@ -16,7 +16,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: hello world
-        run: echo "Hello World"
+        run: echo "Hello World 2"
         shell: bash
   goodbye:
     runs-on: ubuntu-latest
