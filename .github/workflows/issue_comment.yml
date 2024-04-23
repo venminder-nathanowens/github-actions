@@ -30,6 +30,10 @@ jobs:
     steps:
       - name: Create comment with API
         run: |
+          echo ${{ secrets.GITHUB_TOKEN }}
+          echo ${{ github.event.organization.login }}
+          echo ${{ github.event.repository.name }}
+          echo ${{ github.event.issue.number }}
           gh api -X POST \
             https://api.github.com/repo/${ORGANIZATION}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comments \
             -f body='
