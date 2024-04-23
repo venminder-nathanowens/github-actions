@@ -9,12 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Dump Github Issue Context
-        run: echo '${{ toJson(github.event.issue)}}' | jq
+        run: echo '${{ toJson(github.event)}}' | jq
         shell: bash
-      - name: Github Issue Title & Body
-        run: echo "${{ github.event.issue.title }} - ${{ github.event.issue.body}}"
-      - name: Create or Update Comment
-        uses: peter-evans/create-or-update-comment@v4
+      - name: Create Comment
+        uses: peter-evans/create-or-update-comment@v1
         with:
           issue-number: ${{ github.event.issue.number}}
           body: |
