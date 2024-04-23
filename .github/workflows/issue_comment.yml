@@ -35,10 +35,8 @@ jobs:
           echo ${{ github.event.repository.name }}
           echo ${{ github.event.issue.number }}
           gh api -X POST \
-            https://api.github.com/repo/${ORGANIZATION}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comments \
-            -f body='
-            Comment from the API.
-            '
+            https://api.github.com/repos/${ORGANIZATION}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comments \
+            -f body='Comment from the API.'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ORGANIZATION: ${{ github.event.issue.user.login }}
