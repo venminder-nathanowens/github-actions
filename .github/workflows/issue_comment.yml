@@ -12,4 +12,15 @@ jobs:
         run: echo '${{ toJson(github.event.issue)}}' | jq
         shell: bash
       - name: Github Issue Title & Body
-        run: echo "Title':' ${{ github.event.issue.title }} Body':' ${{ github.event.issue.body}}"
+        run: echo "${{ github.event.issue.title }} - ${{ github.event.issue.body}}"
+      - name: Create or Update Comment
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.issue.number}}
+          body: |
+            This is a multi-line text comment
+            - With GitHub **markdown** :sparkles:
+            - Created by [create-or-update-comment][1]
+
+            [1]: https://github.com/peter-evans/create-or-update-comment
+          reactions: "+1"
