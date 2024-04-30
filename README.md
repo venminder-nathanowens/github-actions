@@ -605,7 +605,7 @@
 
 - Identify an action’s type, inputs, and outputs
 
-  - Action type can be Docker or JavaScript. Inputs are specified under with: in the workflow file, and outputs can be used from one step in another by referencing them with ${{ steps.<step_id>.outputs.<output_name> }}.
+  - Action type can be Docker Container, JavaScript or Composite (run). Inputs are specified under 'with:' in the action.yaml file, and outputs can be used from one step in another by referencing them with ${{ steps.<step_id>.outputs.<output_name> }}.
 
 - Demonstrate how to use the specific version of an action in a workflow
 
