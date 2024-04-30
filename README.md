@@ -724,6 +724,8 @@
             echo "::endgroup::"
   ```
 
+  ![Example: Grouping log lines](https://docs.github.com/assets/cb-4487/mw-1440/images/help/actions/actions-log-group.webp)
+  
 ### Distribute an action:
 
 - Identify how to select an appropriate distribution model for an action (i.e., public, private, marketplace)
