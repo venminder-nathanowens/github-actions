@@ -1,5 +1,7 @@
 # GitHub Actions
 
+[![Hello World workflow](https://github.com/venminder-nathanowens/github-actions/actions/workflows/hello_world.yml/badge.svg)](https://github.com/venminder-nathanowens/github-actions/actions/workflows/hello_world.yml)
+
 ## Domain 1: Author and maintain workflows
 
 ### Work with events that trigger workflows:
