@@ -107,20 +107,6 @@
 
 - Implement workflow commands as a run step to communicate with the runner
 
-  #### Example: Grouping log lines
-
-  ```yaml
-  jobs:
-  bash-example:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Group of log lines
-        run: |
-            echo "::group::My title"
-            echo "Inside group"
-            echo "::endgroup::"
-  ```
-
   #### Example: Seting an environment variable
   
   ```yaml
@@ -723,6 +709,20 @@
   ```
 
 - Implement workflow commands within an action to communicate with the runner (Note: this includes exit codes)
+
+  #### Example: Grouping log lines
+
+  ```yaml
+  jobs:
+  bash-example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Group of log lines
+        run: |
+            echo "::group::My title"
+            echo "Inside group"
+            echo "::endgroup::"
+  ```
 
 ### Distribute an action:
 
