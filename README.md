@@ -15,7 +15,7 @@
     build:
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v2
+        - uses: actions/checkout@v4
         - name: Run a one-line script
           run: echo "Hello, world!"
   ```
@@ -54,7 +54,7 @@
     test:
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v2
+        - uses: actions/checkout@v4
         - name: Run tests
           run: make test
   ```
@@ -74,7 +74,7 @@
   ```yaml
   steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     - name: Run script if not a fork
       if: github.repository_owner == 'your_username'
       run: echo "Running on main repo!"
@@ -123,7 +123,7 @@
     build:
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v2
+        - uses: actions/checkout@v4
         - run: make build
     deploy:
       needs: build
@@ -144,7 +144,7 @@
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
-          uses: actions/checkout@v2
+          uses: actions/checkout@v4
         - name: Use secret
           run: echo "Deploy key is ${{ secrets.DEPLOY_KEY }}"
   ```
@@ -189,10 +189,16 @@
 - Add a script to a workflow
 
   ```yaml
-  steps:
-    - uses: actions/checkout@v2
-    - name: Run script
-      run: bash scripts/my_script.sh
+  jobs:
+  example-job:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./scripts
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run script
+        run: bash scripts/my_script.sh
   ```
 
 - Demonstrate how to publish to GitHub Packages using a workflow
@@ -201,7 +207,7 @@
   steps:
     # Set up authentication
     - name: Set up Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v4
       with:
         node-version: "14"
         registry-url: "https://npm.pkg.github.com"
@@ -252,11 +258,11 @@
   ```yaml
   steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v1
+      uses: github/codeql-action/init@v3
     - name: Analyze
-      uses: github/codeql-action/analyze@v1
+      uses: github/codeql-action/analyze@v3
   ```
 
 - Demonstrate how to publish a component as a GitHub release using GitHub Actions
@@ -272,12 +278,12 @@
       runs-on: ubuntu-latest
       steps:
         - name: Checkout code
-          uses: actions/checkout@v2
+          uses: actions/checkout@v4
         - name: Create Release
           id: create_release
           uses: actions/create-release@v1
           env:
-            GITHUB_TOKEN: ${{
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   ```
 
 - Deploy a release to a cloud provider using a GitHub Actions workflow
@@ -359,9 +365,9 @@
     build:
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v2
+        - uses: actions/checkout@v4
         - name: Cache node modules
-          uses: actions/cache@v1
+          uses: actions/cache@v4
           with:
             path: ~/.npm
             key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -381,7 +387,7 @@
         - name: Generate artifact
           run: echo "data" > artifact.txt
         - name: Upload artifact
-          uses: actions/upload-artifact@v2
+          uses: actions/upload-artifact@v4
           with:
             name: my-artifact
             path: artifact.txt
@@ -390,7 +396,7 @@
       runs-on: ubuntu-latest
       steps:
         - name: Download artifact
-          uses: actions/download-artifact@v2
+          uses: actions/download-artifact@v4
           with:
             name: my-artifact
         - name: Use artifact
@@ -424,9 +430,9 @@
           os: [ubuntu-latest, windows-latest, macos-latest]
           node-version: [12, 14, 16]
       steps:
-        - uses: actions/checkout@v2
+        - uses: actions/checkout@v4
         - name: Setup Node.js
-          uses: actions/setup-node@v1
+          uses: actions/setup-node@v4
           with:
             node-version: ${{ matrix.node-version }}
   ```
@@ -532,7 +538,7 @@
 - Demonstrate how to use the specific version of an action in a workflow
 
   ```yaml
-  uses: actions/checkout@v2  # Using a version tag
+  uses: actions/checkout@v4  # Using a version tag
   uses: actions/checkout@ab1cd234e # Using a commit SHA
   uses: actions/checkout@main  # Using a branch name
   ```
