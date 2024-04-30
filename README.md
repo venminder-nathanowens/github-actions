@@ -49,7 +49,7 @@
   ```yaml
   on:
     pull_request:
-      types: [synchronize]
+      types: [opened]
   jobs:
     test:
       runs-on: ubuntu-latest
