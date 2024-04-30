@@ -605,7 +605,7 @@
 
 - Identify an action’s type, inputs, and outputs
 
-  - Action type can be Docker Container, JavaScript or Composite (run). Inputs are specified under 'with:' in the action.yaml file, and outputs can be used from one step in another by referencing them with ${{ steps.<step_id>.outputs.<output_name> }}.
+  - Action type can be Docker Container, JavaScript or Composite Actions (run step). Inputs are specified under 'with:' in the action.yaml file, and outputs can be used from one step in another by referencing them with ${{ steps.<step_id>.outputs.<output_name> }}.
 
 - Demonstrate how to use the specific version of an action in a workflow
 
@@ -619,7 +619,7 @@
 
 ### Use available action types:
 
-- Identify the type of action required for a given problem (i.e. JavaScript, Docker container, run step)
+- Identify the type of action required for a given problem (i.e. JavaScript Actions, Docker container Actions, Composite Actions (run step))
 
   - **JavaScript Actions:** Best for when you need a fast execution time and do not require a specific operating system or environment. Ideal for manipulating workflow data, making REST API calls, and handling workflow logic.
   - **Docker Container Actions:** Suitable for tasks that require a specific operating system environment or when you need to package and run a specific software in a containerized environment.
