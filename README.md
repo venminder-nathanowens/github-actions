@@ -778,29 +778,29 @@
 
 ### Manage runners for the enterprise:
 
-- Describe the effects of configuring IP allow lists on GitHub- hosted and self- hosted runners
+- Describe the effects of configuring IP allow lists on GitHub-hosted and self-hosted runners
 
   - IP allow lists can be used to control which IP addresses are permitted to interact with GitHub-hosted and self-hosted runners. For GitHub-hosted runners, this restricts which actions can run, potentially impacting workflows that interact with external services. For self-hosted runners, this adds a layer of security by restricting access to the runners.
 
-- Describe how to select appropriate runners to support workloads (i.e. using a self- hosted versus GitHub- hosted runner, choosing supported operating systems)
+- Describe how to select appropriate runners to support workloads (i.e. using a self-hosted versus GitHub-hosted runner, choosing supported operating systems)
 
   - **Self-hosted vs. GitHub-hosted Runners:** Choose self-hosted runners for jobs requiring specific hardware, software, or networks not available on GitHub-hosted runners. Use GitHub-hosted runners for jobs that are compatible with standard environments to benefit from GitHub's infrastructure.
   - **Operating Systems:** Select runners that support the operating systems required by your workflows, ensuring compatibility and performance.
 
-- Explain the difference between GitHub- hosted and self- hosted runners
+- Explain the difference between GitHub-hosted and self-hosted runners
 
   - GitHub-hosted runners are managed by GitHub and offer a variety of environments. They are easy to set up and scale but have usage limits. Self-hosted runners are managed by your organization, offer full control over the environment, and are suitable for workflows requiring specific configurations.
 
-- Configure self- hosted runners for enterprise use (i.e. including proxies, labels, networking)
+- Configure self-hosted runners for enterprise use (i.e. including proxies, labels, networking)
 
   - Include network configurations such as proxies to ensure runners can communicate with the GitHub API and other necessary services. Label runners to specify job routing.
 
-- Demonstrate how to manage self- hosted runners using groups (i.e. managing access, moving runners into and between
+- Demonstrate how to manage self-hosted runners using groups (i.e. managing access, moving runners into and between
   groups)
 
   - Runners can be organized into groups within an enterprise to manage permissions and segregate jobs by department or project type. Runners can be moved between groups through the GitHub UI or via API.
 
-- Demonstrate how to monitor, troubleshoot, and update self- hosted runners
+- Demonstrate how to monitor, troubleshoot, and update self-hosted runners
 
   - Use tools such as monitoring agents to keep track of the runners’ health and performance. Regularly update the runner software to ensure compatibility with GitHub Actions features. Review logs for troubleshooting any issues that arise.
 
