@@ -89,7 +89,7 @@
   - **Runs** refer to each instance a workflow is executed, which happens automatically upon a triggering event or can be manually triggered.
   - **Marketplace** is where you can find and share actions to use in your workflows, which can be community-built or officially maintained by GitHub.
 
-- Identify scenarios suited for using GitHub- hosted and self- hosted runners
+- Identify scenarios suited for using GitHub-hosted and self-hosted runners
 
   #### GitHub-Hosted Runners:
 
