@@ -63,11 +63,11 @@
 
 - Identify the correct syntax for workflow jobs (i.e. indentation and encapsulation of parts of the workflow)
 
-  - Workflows are written in YAML. Proper indentation and structuring are crucial. Jobs are encapsulated within the jobs key, each job can contain multiple steps.
+  - Workflows are written in YAML. Proper indentation and structuring are crucial. Jobs are encapsulated within the 'jobs' key, each job can contain multiple steps.
 
 - Use job steps for actions and shell commands
 
-  - Actions are reusable units in workflows, specified with uses. Shell commands are run with 'run'.
+  - Actions are reusable units in workflows, specified with 'uses'. Shell commands are run with 'run'.
 
 - Use conditional keywords for steps
 
