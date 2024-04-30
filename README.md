@@ -156,14 +156,20 @@
 - Identify the location to set custom environment variables in a workflow
 
   ```yaml
+  name: Environment variable example
+  on: [push]
+  env:
+    WORKFLOW_VAR: "Environment variable set at Workflow level"
   jobs:
     build:
       runs-on: ubuntu-latest
       env:
-        CUSTOM_VAR: "custom value"
+        JOB_VAR: "Environment variable set at Job level"
       steps:
         - name: Use custom environment variable
-          run: echo $CUSTOM_VAR
+          run: echo $STEP_VAR
+          env:
+            STEP_VAR: "Environment variable set at Step level"
   ```
 
 - Identify when to use the GITHUB_TOKEN secret
