@@ -482,7 +482,7 @@
 - Add a workflow status badge
 
   ```md
-  [![Example Workflow](https://github.com/github-user/repository/actions/workflows/workflow.yaml/badge.svg)](https://github.com/github-user/repository/actions/workflows/workflow.yaml/badge.svg)
+  [![Example Workflow](https://github.com/owner/repository/actions/workflows/workflow.yaml/badge.svg)](https://github.com/owner/repository/actions/workflows/workflow.yaml/badge.svg)
   ```
 
 - Add environment protections
