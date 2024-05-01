@@ -1,5 +1,7 @@
 # GitHub Actions
 
+[![GitHub Actions Certification](https://github.com/venminder-nathanowens/github-actions/blob/main/github-actions.png)](https://www.credly.com/badges/593141a5-fb5d-4e65-b78c-be04214e242b/public_url)
+
 [![Hello World workflow](https://github.com/venminder-nathanowens/github-actions/actions/workflows/hello_world.yml/badge.svg)](https://github.com/venminder-nathanowens/github-actions/actions/workflows/hello_world.yml)
 
 ## Domain 1: Author and maintain workflows
